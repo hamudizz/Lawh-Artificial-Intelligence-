@@ -12,27 +12,7 @@ import { account, ID } from './lib/appwrite';
 
 
 const App = () => {
-  return (
-    <>
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
-        <Hero />
-        <Benefits />
-        <Collaboration />
-        <Services />
-        <Pricing />
-        <Roadmap />
-        <Footer />
-      </div>
-
-      <ButtonGradient />
-    </>
-  );
-};
-
-export default App;
-const App = () => {
-  const [loggedInUser, setLoggedInUser] = useState(null);
+   const [loggedInUser, setLoggedInUser] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -40,10 +20,9 @@ const App = () => {
   async function login(email, password) {
     await account.createEmailPasswordSession(email, password);
     setLoggedInUser(await account.get());
-  }
-
   return (
-    <div>
+    <>
+       <div>
       <p>
         {loggedInUser ? `Logged in as ${loggedInUser.name}` : 'Not logged in'}
       </p>
@@ -78,5 +57,19 @@ const App = () => {
         </button>
       </form>
     </div>
+      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+        <Header />
+        <Hero />
+        <Benefits />
+        <Collaboration />
+        <Services />
+        <Pricing />
+        <Roadmap />
+        <Footer />
+      </div>
+
+      <ButtonGradient />
+    </>
   );
 };
+
