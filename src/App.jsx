@@ -22,6 +22,19 @@ const App = () => {
     setLoggedInUser(await account.get());
   return (
     <>
+          <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+        <Header />
+        <Hero />
+        <Benefits />
+        <Collaboration />
+        <Services />
+        <Pricing />
+        <Roadmap />
+        <Footer />
+      </div>
+
+      <ButtonGradient />
+    </>
        <div>
       <p>
         {loggedInUser ? `Logged in as ${loggedInUser.name}` : 'Not logged in'}
@@ -57,19 +70,7 @@ const App = () => {
         </button>
       </form>
     </div>
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
-        <Hero />
-        <Benefits />
-        <Collaboration />
-        <Services />
-        <Pricing />
-        <Roadmap />
-        <Footer />
-      </div>
-
-      <ButtonGradient />
-    </>
+   
   );
 };
 
